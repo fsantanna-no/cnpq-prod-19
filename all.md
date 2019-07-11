@@ -1,22 +1,19 @@
-a) Resumo
-b) Objetivos Geral e Específicos;
-c) Metodologia;
-d) Resultados esperados;
-e) Relevância e impacto do projeto para o desenvolvimento científico, tecnológico
-ou de inovação;
-f) Compilação sucinta das atividades de pesquisa desenvolvidas, consideradas pelo
-requerente as mais relevantes, indicando a produção gerada por elas até 2019.
-Tais atividades podem ser demonstradas por intermédio de artigos científicos,
-capítulos de livros ou livros, trabalhos completos em eventos científicos, patentes,
-softwares, documentos que subsidiaram a elaboração de leis e/ou implementação
-de políticas públicas, entre outros. Também podem ser mencionados
-financiamentos recebidos de agências públicas ou instituições privadas,
-orientações concluídas ou em andamento e parcerias institucionais; e
-g) Demais informações relevantes sobre o projeto a ser desenvolvido.
+#a) Resumo
+#b) Objetivos Geral e Específicos;
+#c) Metodologia;
+#d) Resultados esperados;
+e) Relevância e impacto do projeto para o desenvolvimento científico, tecnológico ou de inovação;
+#f) Compilação sucinta das atividades de pesquisa desenvolvidas, consideradas pelo requerente as mais relevantes, indicando a produção gerada por elas até 2019.  Tais atividades podem ser demonstradas por intermédio de artigos científicos, capítulos de livros ou livros, trabalhos completos em eventos científicos, patentes, softwares, documentos que subsidiaram a elaboração de leis e/ou implementação de políticas públicas, entre outros. Também podem ser mencionados financiamentos recebidos de agências públicas ou instituições privadas, orientações concluídas ou em andamento e parcerias institucionais; e
+#g) Demais informações relevantes sobre o projeto a ser desenvolvido.
 
 # Título
 
-Eficiência Energética e "Standby" como Princípios de uma Linguagem de Programação para a Internet das Coisas
+Eficiência Energética e "Standby" como Princípios de uma Linguagem de Programação para a IoT
+
+Energy Efficiency and Standby as the Basis of a Programming Language for the IoT
+
+standby, linguagens síncronas, internet das coisas
+standby, synchronous languages, internet of things
 
 # Resumo
 
@@ -251,6 +248,10 @@ De modo a transpor a barreira de dispositivos IoT restritos para os smartphones,
 - Aplicações:
     Além de aplicações IoT, as aplicações típicas de smartphone, tais como mensagens instantâneas e navegação Web, também podem melhorar a eficiência energética através do modo de standby.
 
+## Disciplinas/Ensino de Apoio
+
+TODO
+
 # Resultados Esperados
 
 ## 24 Meses Iniciais
@@ -272,10 +273,9 @@ Esperamos aumentar consideravelmente a autonomia das baterias mantendo toda a fu
 
 # Relevância e Impacto
 
-# Atividades de Pesquisa
+TODO
 
-## Implementações
-    - sdl, arduino, media, jogo completo, ...
+# Atividades de Pesquisa Relacionadas
 
 ## Projetos
 
@@ -287,8 +287,10 @@ Este projeto sendo agora submetido à FAPERJ é baseado em um projeto de 5 anos 
     - Vigência: entre Março de 2018 e Fevereiro de 2019
     - Coordenador: Francisco Figueiredo Goytacaz Sant'Anna
 
+## Trajetória de Publicações
+
 Como destacado no documento principal, tenho trabalhado no projeto e implementação da linguagem de programação Céu pelos últimos 10 anos.
-A linha de tempo a seguir enumera todas as publicações relacionadas a Céu nas áreas de linguagens de programação, sistemas embarcados, redes de sensores sem fio, jogos, e sistemas multimídia.
+A linha de tempo a seguir enumera as publicações relacionadas a Céu nas áreas de linguagens de programação, sistemas embarcados, redes de sensores sem fio, jogos, e sistemas multimídia.
 O objetivo é sinalizar que esse caminho de pesquisa é contínuo, amadurecido e que ainda permanecerá como meu foco principal por muitos anos.
 Também destaco o Workshop REBLS voltado especificamente para linguagens reativas e que já está indo para a 6 edição (ocorre anualmente dentro do SPLASH).
 Participei nele como autor, revisor, chair, e hoje faço parte do comitê permanente (https://2019.splashcon.org/home/rebls-2019).
@@ -340,6 +342,26 @@ Participei nele como autor, revisor, chair, e hoje faço parte do comitê perman
     - JSA - Journal of Systems Architecture - Qualis B1
         - "A memory-bounded, deterministic and terminating semantics for the synchronous programming language Céu"
             - (versão estendida) **semântica formal de Céu, provas de terminação, determinismo e limites de memória**
+
+## Software
+
+Céu é uma linguagem com a implementação aberta e disponível para ser usada em diversos ambientes computacionais, tais como Arduino, SDL e LibUV.
+Cada ambiente computacional expõe um conjunto de eventos de entrada e saída que podem ser manipulados pelos programas escritos em Céu.
+
+Estimamos que já foram escritas em torno de 100.000 linhas de código considerando todos os nossos repositórios envolvendo a linguagem:
+
+- Céu: compilador e runtime da linguagem
+    - https://github.com/ceu-lang/ceu
+- Céu-Arduino: ambiente para usar Céu com o Arduino
+    - https://github.com/ceu-arduino/
+- Céu-SDL: ambiente para jogos e aplicações gráficas
+    - https://github.com/ceu-lang/ceu-sdl
+    - Pingus: jogo completo escrito em Céu
+        - https://github.com/fsantanna/pingus
+- Céu-libuv: ambiente para comunicação assíncrona
+    - https://github.com/ceu-lang/ceu-libuv
+- Céu-Media: ambiente para aplicações multimídia
+    - https://github.com/rodrimc/ceu-media
 
 # Bibliografia
 
