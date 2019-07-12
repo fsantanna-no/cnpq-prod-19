@@ -1,19 +1,23 @@
-#a) Resumo
-#b) Objetivos Geral e Específicos;
-#c) Metodologia;
-#d) Resultados esperados;
+<!--
+a) Resumo
+b) Objetivos Geral e Específicos;
+c) Metodologia;
+d) Resultados esperados;
 e) Relevância e impacto do projeto para o desenvolvimento científico, tecnológico ou de inovação;
-#f) Compilação sucinta das atividades de pesquisa desenvolvidas, consideradas pelo requerente as mais relevantes, indicando a produção gerada por elas até 2019.  Tais atividades podem ser demonstradas por intermédio de artigos científicos, capítulos de livros ou livros, trabalhos completos em eventos científicos, patentes, softwares, documentos que subsidiaram a elaboração de leis e/ou implementação de políticas públicas, entre outros. Também podem ser mencionados financiamentos recebidos de agências públicas ou instituições privadas, orientações concluídas ou em andamento e parcerias institucionais; e
-#g) Demais informações relevantes sobre o projeto a ser desenvolvido.
+f) Compilação sucinta das atividades de pesquisa desenvolvidas, consideradas pelo requerente as mais relevantes, indicando a produção gerada por elas até 2019.  Tais atividades podem ser demonstradas por intermédio de artigos científicos, capítulos de livros ou livros, trabalhos completos em eventos científicos, patentes, softwares, documentos que subsidiaram a elaboração de leis e/ou implementação de políticas públicas, entre outros. Também podem ser mencionados financiamentos recebidos de agências públicas ou instituições privadas, orientações concluídas ou em andamento e parcerias institucionais; e
+g) Demais informações relevantes sobre o projeto a ser desenvolvido.
+-->
 
 # Título
 
 Eficiência Energética e "Standby" como Princípios de uma Linguagem de Programação para a IoT
 
+<!--
 Energy Efficiency and Standby as the Basis of a Programming Language for the IoT
 
 standby, linguagens síncronas, internet das coisas
 standby, synchronous languages, internet of things
+-->
 
 # Resumo
 
@@ -85,30 +89,6 @@ Tendo em vista a escala projetada para a IoT e o papel do modo standby para a ef
 Essa proposta se situa na camada mais baixa de desenvolvimento de software --- na linguagem de programação --- o que significa que todas as aplicações escritas nela tirarão vantagem do modo standby automaticamente, sem esforços extras de programação.
 
 Esperamos que ao reescrever aplicações existentes, estas poderão se beneficiar de economias da ordem de 50%, baseado em estimativas da IEA e também de trabalhos em ciência transparente de energia [2].
-
-# Justificativas para Escolha do Tema
-
-De acordo com a Agência Internacional de Energia (IEA), existiam em torno de 14 bilhões de dispositivos conectados tradicionais em 2013 (ex., telefones TVs inteligentes).
-Esse número deve crescer para 25 bilhões até 2025 com a proliferação de dispositivos IoT (ex., lâmpadas inteligentes e tecnologia vestível).
-Dispositivos tradicionais e de IoT já superam o número de pessoas no planeta por um fator de dois e o tráfego de dados resultante deve crescer a uma taxa exponencial nos próximos anos.
-No entanto, a maior parte da energia desses aparelhos é consumida quando eles estão em "standby" (modo em espera), ou seja, quando os dispositivos não estão desempenhando suas finalidades principais.
-A emissão anual de CO2 relacionada a standby é equivalente a de 1 milhão de carros.
-A projeção de crescimento de IoT, juntamente com o efeito surpreendente dos efeitos de consumo de standby, fizeram com que a eficiência de standby para dispositivos conectados fosse um dos seis pilares do "Plano de Ação para Eficiência Energética" do G20 [1].
-
-Outras organizações também reportaram sobre a importância da economia de energia em dispositivos conectados [1].
-Para o Internet Engineering Task Force (IETF), "o gerenciamento energético está se tornando um requisito adicional para redes devido a diversos fatores que incluem o aumento dos custos de energia, o impacto ecológico para a operação das redes, e a regulação de energia".
-Para o American Council for an Energy-Efficient Economy (ACEEE), "o potencial para a nova eficiência energética permanece enorme, (...) devemos considerar uma abordagem sistêmica para escalar a eficiência energética.  (...) a eficiência inteligente é adaptativa, antecipatória, e conectada".
-
-Considerando iniciativas concretas, o grupo de trabalho "Electronic Devices and Networks" da IEA foca especificamente na questão do standby em dispositivos conectados [1].
-A iniciativa da ACEEE em "Intelligent Efficiency" promove uma abordagem sistemática para otimizar o comportamento cooperativo de dispositivos de modo a buscar ganhos de energia como um todo.
-Ambas as abordagens (por dispositivo e sistêmica) envolvem soluções de software, dado que a economia de energia é uma política dinâmica que depende das demandas das aplicações e níveis de baterias em determinados momentos.
-
-Também existem padrões de baixo consumo de energia para a infraestrutura de telecomunicações de IoT com diferentes demandas de alcance, velocidade e distribuição física.
-Como exemplo, o Bluetooth Low-Energy (BLE) é um substituto para o padrão Bluetooth clássico e é projetado para baixas velocidades em redes pessoais (PANs).
-O 6LoWPAN adapta o padrão IPv6 para baixo consumo e em dispositivos de processamento limitado.
-Essas tecnologias permitem transmissões mais eficientes, suportam topologias flexíveis e reduzem o tráfego consideravelmente.
-Elas também possibilitam o uso de modos de standby mínimos.
-No entanto, essas tecnologias também exigem o uso de software para controlar os modos ativos e de standby de maneira a construir uma IoT eficiente em termos de energia.
 
 # Metodologia
 
@@ -248,9 +228,11 @@ De modo a transpor a barreira de dispositivos IoT restritos para os smartphones,
 - Aplicações:
     Além de aplicações IoT, as aplicações típicas de smartphone, tais como mensagens instantâneas e navegação Web, também podem melhorar a eficiência energética através do modo de standby.
 
+<!--
 ## Disciplinas/Ensino de Apoio
 
 TODO
+-->
 
 # Resultados Esperados
 
@@ -273,13 +255,33 @@ Esperamos aumentar consideravelmente a autonomia das baterias mantendo toda a fu
 
 # Relevância e Impacto
 
-TODO
+De acordo com a Agência Internacional de Energia (IEA), existiam em torno de 14 bilhões de dispositivos conectados tradicionais em 2013 (ex., telefones TVs inteligentes).
+Esse número deve crescer para 25 bilhões até 2025 com a proliferação de dispositivos IoT (ex., lâmpadas inteligentes e tecnologia vestível).
+Dispositivos tradicionais e de IoT já superam o número de pessoas no planeta por um fator de dois e o tráfego de dados resultante deve crescer a uma taxa exponencial nos próximos anos.
+No entanto, a maior parte da energia desses aparelhos é consumida quando eles estão em "standby" (modo em espera), ou seja, quando os dispositivos não estão desempenhando suas finalidades principais.
+A emissão anual de CO2 relacionada a standby é equivalente a de 1 milhão de carros.
+A projeção de crescimento de IoT, juntamente com o efeito surpreendente dos efeitos de consumo de standby, fizeram com que a eficiência de standby para dispositivos conectados fosse um dos seis pilares do "Plano de Ação para Eficiência Energética" do G20 [1].
+
+Outras organizações também reportaram sobre a importância da economia de energia em dispositivos conectados [1].
+Para o Internet Engineering Task Force (IETF), "o gerenciamento energético está se tornando um requisito adicional para redes devido a diversos fatores que incluem o aumento dos custos de energia, o impacto ecológico para a operação das redes, e a regulação de energia".
+Para o American Council for an Energy-Efficient Economy (ACEEE), "o potencial para a nova eficiência energética permanece enorme, (...) devemos considerar uma abordagem sistêmica para escalar a eficiência energética.  (...) a eficiência inteligente é adaptativa, antecipatória, e conectada".
+
+Considerando iniciativas concretas, o grupo de trabalho "Electronic Devices and Networks" da IEA foca especificamente na questão do standby em dispositivos conectados [1].
+A iniciativa da ACEEE em "Intelligent Efficiency" promove uma abordagem sistemática para otimizar o comportamento cooperativo de dispositivos de modo a buscar ganhos de energia como um todo.
+Ambas as abordagens (por dispositivo e sistêmica) envolvem soluções de software, dado que a economia de energia é uma política dinâmica que depende das demandas das aplicações e níveis de baterias em determinados momentos.
+
+Também existem padrões de baixo consumo de energia para a infraestrutura de telecomunicações de IoT com diferentes demandas de alcance, velocidade e distribuição física.
+Como exemplo, o Bluetooth Low-Energy (BLE) é um substituto para o padrão Bluetooth clássico e é projetado para baixas velocidades em redes pessoais (PANs).
+O 6LoWPAN adapta o padrão IPv6 para baixo consumo e em dispositivos de processamento limitado.
+Essas tecnologias permitem transmissões mais eficientes, suportam topologias flexíveis e reduzem o tráfego consideravelmente.
+Elas também possibilitam o uso de modos de standby mínimos.
+No entanto, essas tecnologias também exigem o uso de software para controlar os modos ativos e de standby de maneira a construir uma IoT eficiente em termos de energia.
 
 # Atividades de Pesquisa Relacionadas
 
 ## Projetos
 
-Este projeto sendo agora submetido à FAPERJ é baseado em um projeto de 5 anos aprovado pelo Instituto Serrapilheira, mas que acabou sendo financiado somente por um ano (apenas 12 dos 70 projetos inicialmente aprovados continuaram sendo financiados):
+Este projeto sendo agora submetido ao CNPq é baseado em um projeto de 5 anos aprovado pelo Instituto Serrapilheira, mas que acabou sendo financiado somente por um ano (apenas 12 dos 70 projetos inicialmente aprovados continuaram sendo financiados):
 
 - Título: "Energy Efficiency for IoT Software in the Large"
     - Número do Processo: Serra-1708-15612
@@ -289,7 +291,7 @@ Este projeto sendo agora submetido à FAPERJ é baseado em um projeto de 5 anos 
 
 ## Trajetória de Publicações
 
-Como destacado no documento principal, tenho trabalhado no projeto e implementação da linguagem de programação Céu pelos últimos 10 anos.
+Como destacado na Introdução, tenho trabalhado no projeto e implementação da linguagem de programação Céu pelos últimos 10 anos.
 A linha de tempo a seguir enumera as publicações relacionadas a Céu nas áreas de linguagens de programação, sistemas embarcados, redes de sensores sem fio, jogos, e sistemas multimídia.
 O objetivo é sinalizar que esse caminho de pesquisa é contínuo, amadurecido e que ainda permanecerá como meu foco principal por muitos anos.
 Também destaco o Workshop REBLS voltado especificamente para linguagens reativas e que já está indo para a 6 edição (ocorre anualmente dentro do SPLASH).
@@ -300,7 +302,7 @@ Participei nele como autor, revisor, chair, e hoje faço parte do comitê perman
         - "Céu: A Reactive Language for Wireless Sensor Networks"
             - **primeira exposição de Céu em um colóquio para doutorandos**
 - 2013
-    - SenSys - The ACM Conference on Embedded Networked Sensor Systems - Qualis A1
+    - SenSys - The ACM Conference on Embedded Networked Sensor Systems
         - "Safe Concurrent Abstractions for Wireless Sensor Networks"
             - **paper principal sobre a parte estática de Céu: projeto e avaliação da linguagem**
     - REM - Workshop on Reactivity, Events and Modularity
@@ -314,32 +316,32 @@ Participei nele como autor, revisor, chair, e hoje faço parte do comitê perman
         - "Structured Reactive Programming with Céu"
             - **paper sobre a parte dinâmica de Céu: conceito de organismos, ponteiros e referências**
 - 2015
-    - TOSN - ACM Transactions on Sensor Networks - Qualis B1
+    - TOSN - ACM Transactions on Sensor Networks
         - "Terra: Flexibility and Safety in Wireless Sensor Networks"
             - **máquina virtual de Céu com reprogramação remota**
     - REBLS - Workshop on Reactive and Event-based Languages & Systems
         - "Reactive Traversal of Recursive Data Types"
             - **tratamento de dados em Céu: uniões discriminadas, mecanismo de percorrimento, interpretador embutido**
-    - Modularity - AOSD Conference On Modularity - Qualis A2
+    - Modularity - AOSD Conference On Modularity
         - "Structured Synchronous Reactive Programming with Céu"
             - **paper principal sobre a parte dinâmica de Céu: conceito de organismos, ponteiros e referências**
 - 2016
-    - WebMedia - Simpósio Brasileiro de Sistemas Multimídia e Web - Qualis B2
+    - WebMedia - Simpósio Brasileiro de Sistemas Multimídia e Web
         - "Céu-Media: Local Inter-Media Synchronization Using Céu"
             - **desenvolvimento de aplicações multimídia em Céu**
 - 2017
-    - TECS - ACM Transactions on Embedded Computing Systems - Qualis B1
+    - TECS - ACM Transactions on Embedded Computing Systems
         - "The Design and Implementation of the Synchronous Language Céu"
             - **projeto e implementação de Céu em comparação com Esterel**
 - 2018
-    - SBGames - Simpósio Brasileiro de Games e Entretenimento Digital - Qualis B2
+    - SBGames - Simpósio Brasileiro de Games e Entretenimento Digital
         - "Structured Synchronous Reactive Programming for Game Development"
             - **desenvolvimento de jogos em Céu, padrões de programação de jogos**
-    - LCTES - Languages, Compilers, Tools and Theory of Embedded Systems - Qualis B2
+    - LCTES - Languages, Compilers, Tools and Theory of Embedded Systems
         - "A Memory-Bounded, Deterministic and Terminating Semantics for the Synchronous Programming Language Céu"
             - **semântica formal de Céu, provas de terminação, determinismo e limites de memória**
 - 2019
-    - JSA - Journal of Systems Architecture - Qualis B1
+    - JSA - Journal of Systems Architecture
         - "A memory-bounded, deterministic and terminating semantics for the synchronous programming language Céu"
             - (versão estendida) **semântica formal de Céu, provas de terminação, determinismo e limites de memória**
 
