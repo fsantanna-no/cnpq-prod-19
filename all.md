@@ -27,9 +27,9 @@ A Agência Internacional de Energia (IEA) prevê que o uso efetivo de standby te
 
 Este projeto de pesquisa visa endereçar os desafios de energia para o software de dispositivos conectados conforme determinados pela IEA: garantir que os dispositivos adotem níveis de standby profundos, e que permaneçam em standby o maior tempo possível.
 
-Propomos investigar a eficiência energética de software como princípio da linguagem de programação Céu, ainda em desenvolvimento, de modo que todos os programas se beneficiem de longos e profundos períodos de standby automaticamente, sem esforços extras de programação.
+Propomos investigar a eficiência energética de software como princípio da linguagem de programação Céu, de modo que todos os programas nela desenvolvidos se beneficiem de longos e profundos períodos de standby automaticamente, sem esforços extras de programação.
 O foco principal de Céu são aplicações reativas que interagem com o ambiente em ciclos contínuos de espera, leitura de sensores e atuação, típicos de sistemas embarcados e IoT.
-A linguagem é baseada no modelo de concorrência síncrono, que troca poder por confiabilidade e possui um modelo de tempo mais simples mas que cobre os requisitos de aplicações reativas.
+A linguagem é baseada no modelo de concorrência síncrono, que troca poder por confiabilidade e possui um modelo de tempo mais robusto e restrito mas que cobre os requisitos principais de aplicações reativas.
 Nesse modelo, todas as reações ao mundo externo são computadas em tempo finito, garantindo que as aplicações sempre cheguem a um estado ocioso suscetível ao modo standby.
 
 # Estado da Arte
@@ -38,7 +38,7 @@ Apesar dos avanços de pesquisa em linguagens de programação, sistemas embarca
 A predominância de C está associada a sua portabilidade entre arquiteturas, sua eficiência em termos de uso de memória e CPU, e também ao seu legado de código e programadores.
 Sendo assim, o desenvolvimento completo da pilha de IoT ainda depende muito de C, desde as aplicações de mais alto nível, passando por protocolos de redes, até sistemas operacionais, drivers e SoC firmwares [3].
 No entanto, C oferece uma simples abstração de hardware (um assembly portável) e nenhuma ciência sobre o ambiente externo sob o qual as aplicações executam.
-Como exemplo, C não oferece um vocabulário dedicado para expressar conceitos que naturalmente aparecem em aplicações de IoT, tais como o tempo, comunicação com sensores, concorrência de eventos e ciência de energia [3].
+Como exemplo, C não oferece um vocabulário dedicado a expressar conceitos que naturalmente aparecem em aplicações de IoT, tais como o tempo, comunicação com sensores, concorrência de eventos e ciência de energia [3].
 Além disso, C também é conhecida como uma linguagem insegura sob o ponto de vista de acesso à memória, sendo uma fonte de bugs característicos, tais como vazamento de memória, estouro de buffer e ponteiros pendentes.
 
 Existem diversas propostas de pesquisa para linguagens e sistemas operacionais cientes de energia [2].
@@ -58,8 +58,8 @@ Considerando essas limitações, temos como objetivo prover suporte a economia d
 
 Tenho trabalhado no projeto e implementação da linguagem de programação Céu pelos últimos 10 anos [5].
 Céu é uma nova linguagem reativa que tem como foco principal sistemas embarcados restritos.
-A linguagem oferece suporte primitivo a concorrência determinística, garantido comportamento reproduzível e ainda detecção de acessos simultâneos a variáveis.
-Céu é baseada no modelo de concorrência síncrono, que troca poder por confiabilidade e possui um modelo de tempo mais simples mas que cobre os requisitos principais de aplicações IoT.
+A linguagem oferece suporte primitivo a concorrência determinística (garantido comportamento reproduzível) e ainda detecção de acessos simultâneos a variáveis.
+Céu é baseada no modelo de concorrência síncrono, que troca poder por confiabilidade e possui um modelo de tempo mais robusto e restrito mas que cobre os requisitos principais de aplicações IoT.
 Nesse modelo, todas as reações ao mundo externo são computadas em tempo finito, garantindo que as aplicações sempre cheguem a um estado ocioso suscetível ao modo standby.
 
 Em trabalhos anteriores [5], adaptamos Céu para executar sobre o TinyOS no contexto de redes de sensores sem fio e desenvolvemos algumas aplicações, protocolos e device drivers.
@@ -68,14 +68,13 @@ Também avaliamos a responsividade da CPU sob tráfego de dados intenso e verifi
 Em outro trabalho [5], desenvolvemos uma máquina virtual minúscula de Céu para dispositivos de baixo consumo energético que permite reprogramação remota.
 Por fim, adotamos Céu em outras classes de sistemas reativos com sucesso, tais como jogos e multimídia [5].
 
-Em um trabalho mais recente [5], discutimos as decisões de design de Céu sob a perspectiva de semântica de linguagens de programação e em comparação com o trabalho seminal de Esterel, a primeira linguagem síncrona.
-A diferença mais fundamental entre as duas linguagem é que Céu usa uma noção de tempo baseada na ocorrência de eventos externos que definem instantes indivisíveis em uma linha de tempo lógica dentro de uma aplicação.
-Essa característica torna o modelo de tempo de Céu exclusivamente reativo a eventos de entrada.
-Como consequência, semanticamente o tempo não avança durante períodos inativos, fazendo com que a implementação de todas as aplicações sejam suscetíveis ao modo standby, fato que iremos explorar neste projeto.
+Em um trabalho mais recente [5], discutimos o design de Céu sob a perspectiva de semântica de linguagens de programação e em comparação com o trabalho seminal de Esterel, a primeira linguagem síncrona.
+A diferença mais fundamental entre as duas linguagem é que Céu usa uma noção de tempo baseada na ocorrência de eventos externos que definem instantes indivisíveis na linha de tempo lógica das aplicações.
+Como consequência, semanticamente o tempo não avança durante períodos inativos (quando não há ocorrência de eventos), fazendo com que a implementação de todas as aplicações seja suscetível ao modo standby, fato que iremos explorar neste projeto.
 
 # Objetivos
 
-Para confrontar o desafio de um uso efetivo e generalizado de standby, novas soluções devem ser escaláveis para a massa software IoT que está por vir.
+Para confrontar o desafio de um uso efetivo e difundido de standby, novas soluções devem ser escaláveis para a massa software IoT que está por vir.
 Este projeto de pesquisa visa endereçar os desafios energéticos de software, conforme determinados pela IEA [1]:
 
 - Garantir que os dispositivos atinjam níveis profundos de standby.
@@ -88,7 +87,8 @@ Tendo em vista a escala projetada para a IoT e o papel do modo standby para a ef
 3. Prover mecanismos de standby no nível da linguagem Céu possibilitando escalar para todas as aplicações.
 4. Suportar mecanismos de standby transparentes e não intrusivos para reduzir as barreiras de adoção por programadores.
 
-Essa proposta se situa na camada mais baixa de desenvolvimento de software --- na linguagem de programação Céu --- o que significa que todas as aplicações escritas nela tirarão vantagem do modo standby automaticamente, sem esforços extras de programação.
+Essa proposta se situa na camada mais baixa de desenvolvimento de software --- na camada de linguagens de programação.
+Assim, todas as aplicações escritas na linguagem Céu tirarão vantagem do modo standby automaticamente, sem esforços extras de programação.
 
 Esperamos que ao reescrever aplicações existentes, estas poderão se beneficiar de economias da ordem de 50%, baseado em estimativas da IEA e também de trabalhos em ciência transparente de energia [2].
 
@@ -98,8 +98,8 @@ Esperamos que ao reescrever aplicações existentes, estas poderão se beneficia
 
 ### Infraestrutura de Hardware para IoT
 
-Usaremos Arduinos como a principal plataforma de hardware para IoT [4].
-A maioria deles é baseada em microcontroladores de baixo consumo de energia, tais como o ATmega328p que suporta seis modos de standby.
+Usaremos o Arduino como a principal plataforma de hardware para IoT [4].
+A maioria dos modelos é baseada em microcontroladores de baixo consumo de energia, tais como o ATmega328p que suporta seis modos de standby.
 Dependendo das configurações (ex., frequência e voltagem da MCU), um Arduino pode drenar de 45mA em operação máxima até 5uA no nível mais profundo de standby.
 A literatura mostra que é possível fazer com que aplicações IoT operem com apenas 50% de "duty cycle" em média.
 Assim, considerando que o consumo em standby é desprezível, poderemos economizar até 50% de energia.
@@ -128,42 +128,44 @@ O código a seguir é um esboço da abordagem que iremos adotar.
 A aplicação solicita, a cada hora, a leitura de um conversor analógico digital e aguarda o seu retorno para executar alguma ação:
 
 ```
-output none ADC_REQUEST    // evento de saida para iniciar a conversao
-input  int  ADC_DONE       // evento de entrada que sinaliza o resultado
+output none ADC_REQUEST  // evento de saida para iniciar a conversao
+input  int  ADC_DONE     // evento de entrada que sinaliza o resultado
 
-#include "adc.ceu"         // driver que implementa os eventos de E/S
+#include "adc.ceu"       // driver que implementa os eventos de E/S
 
-every 1h do                // a cada hora
-    emit ADC_REQUEST       // solicita uma conversao
-    var v = await ADC_DONE // aguarda o seu termino e le o resultado
-    <...>                  // executa alguma acao
+every 1h do              // a cada hora
+  emit ADC_REQUEST       // solicita uma conversao
+  var v = await ADC_DONE // aguarda o seu termino e le o resultado
+  <...>                  // executa alguma acao
 end
 ```
 
 É possível notar que o código é escrito de maneira estruturada (sem callbacks) e sem qualquer referência explícita a modos de standby.
 As aplicações usam nomes para abstrair os eventos de entrada e saída que são implementados em drivers.
+O comando de espera "await" indica os pontos em que a aplicação poderá entrar em standby e é a única maneira de interagir com os sensores.
 A maior parte do trabalho fica a cargo do driver, que será escrito apenas uma vez e poderá ser reusado em todas as aplicações:
 
 ```
-output none ADC_REQUEST do      // implementacao do evento de saida
-    <configures-ADC>
-    <enables-ADC-interrupts>
-    <informs-deepest-standby-mode>
+output none ADC_REQUEST do // implementacao do evento de saida
+  <configura-ADC>
+  <habilita-interrupcoes-ADC>
+  <informa-modo-standby>
 end
 
-input int ADC_DONE do           // implementacao do evento de entrada
-    <disables-ADC-interrupts>
-    return <reads-adc-data>
+input int ADC_DONE do      // implementacao do evento de entrada
+  <desabilita-interrupcoes-ADC>
+  return <le-dados-ADC>
 end
 ```
 
 O evento de saída (bloco "output") configura o periférico para fazer a requisição, habilita as interrupções correspondentes e informa à linguagem qual é o seu modo de standby mais profundo mas que ainda permita que o periférico acorde o microcontrolador.
-A linguagem será responsável por interagir com os drivers e identificar o maior denominador comum de standby entre todos os dispositivos em uso a cada momento.
+A linguagem será responsável por interagir com os drivers e identificar o maior denominador comum de standby entre todos os dispositivos em uso.
+A cada momento ocioso, a linguagem acionará o modo de standby ótimo identificado, desligando temporariamente a CPU.
 O evento de entrada (bloco "input") é acionado pelo dispositivo correspondente através de uma interrupção, acordando a CPU e retomando a execução da aplicação automaticamente.
 O código desabilita futuras interrupções do periférico e retorna a leitura requisitada para a aplicação final.
 
 Com essa abordagem, o código da aplicação permanecerá similar aos seus equivalentes em Arduino.
-No entanto, em vez de gastar ciclos da CPU com polling, as aplicações irão entrar em standby sempre que estiverem ociosas.
+No entanto, em vez de gastar ciclos da CPU com polling, as aplicações irão entrar em standby sempre que estiverem ociosas (aguardando em um "await").
 Essa abordagem já foi validada em aplicações e drivers muito simples, mas ainda não realizamos estudos completos por se tratar de projeto em estágio preliminar.
 
 ### Aplicações IoT
@@ -181,10 +183,10 @@ Os dois códigos fazem a mesma coisa: piscam um LED com uma frequência de 1 seg
 // Em C/Arduino
 pinMode(13, OUTPUT);
 while (1) {
-    digitalWrite(13, HIGH);
-    delay(1000);
-    digitalWrite(13, LOW);
-    delay(1000);
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
 }
 ```
 
@@ -192,18 +194,18 @@ while (1) {
 // Em Céu
 output int PIN_13;
 loop do
-    emit PIN_13(high);
-    await 1s;
-    emit PIN_13(low);
-    await 1s;
+  emit PIN_13(high);
+  await 1s;
+  emit PIN_13(low);
+  await 1s;
 end
 ```
 
 Note que as chamadas às funções em C, que não carregam nenhuma semântica de eventos, são substituídas em Céu por um vocabulário próprio que permite que a linguagem entenda os pontos de espera (comandos "await") e possa colocar o microcontrolador em standby.
 Em testes preliminares como esse, conseguimos economias de ordem significativa (acima de 50%), mas ainda é preciso avaliar aplicações complexas onde há concorrência e uso de múltiplos sensores e atuadores.
 
-No longo prazo, esperamos mostrar para desenvolvedores as vantagens de reescreverem suas aplicações em Céu e tirarem proveito dos modos de standby automaticamente.
-Nessa direção, avaliaremos o tempo necessário para reescrever as aplicações e os ganhos reais de eficiência energética.
+No longo prazo, esperamos mostrar para desenvolvedores as vantagens de escreverem novas aplicações em Céu para tirarem proveito dos modos de standby automaticamente.
+Nessa direção, avaliaremos o tempo necessário para escrever (ou reescrever) as aplicações e os ganhos reais de eficiência energética.
 
 ## 12 Meses Finais e Trabalhos Futuros
 
@@ -216,7 +218,7 @@ Até 2016 existiam 3.9 bilhões de assinaturas de smartphones no mundo e esse n�
 
 Smartphones usam arquiteturas muito mais complexas do que microcontroladores embarcados.
 Tipicamente essas arquiteturas dependem de um sistema operacional, uma pilha de TCP/IP completa, e podem executar múltiplas aplicações simultaneamente.
-Além de aplicações reativas, típicas de IoT, smartphones também executam computações puramente ativas, tais como processamento de imagem e funções criptográficas.
+Além de aplicações reativas, típicas de IoT, smartphones também executam computações puramente ativas, tais como processamento de imagens e funções criptográficas.
 Mesmo assim, smartphones são uma peça importante na IoT, servindo como uma interface comum aos humanos para processar, visualizar e atuar na rede.
 
 Smartphones têm restrições similares de consumo de bateria e também podem tirar proveito das técnicas que propomos para sistemas embarcados restritos.
@@ -242,7 +244,7 @@ TODO
 O vocabulário de Céu dedicado à interação com o ambiente aumentará o nível de abstração dos programas para um nível mais próximo do domínio de IoT, provendo mais segurança e expressividade para programadores.
 Esse vocabulário se estenderá até o nível mais básico de rotinas de interrupção em uma abordagem inovadora.
 
-Nossa proposta visa fazer com que todas as aplicações estejam sujeitas a modos de standby transparentemente.
+Nossa proposta visa fazer com que todas as novas aplicações estejam sujeitas a modos de standby transparentemente.
 Sendo parte da infraestrutura de software, somente device drivers necessitarão de gerenciamento explícito de energia, e todas as aplicações construídas sobre eles se beneficiarão de eficiência energética automaticamente.
 
 Céu é um projeto de 10 anos e tem uma implementação open-source madura que está disponível publicamente para downloads.
@@ -364,6 +366,8 @@ Estimamos que já foram escritas em torno de 100.000 linhas de código considera
     - https://github.com/ceu-lang/ceu-libuv
 - Céu-Media: ambiente para aplicações multimídia
     - https://github.com/rodrimc/ceu-media
+
+Os repositórios contém a implementação de Céu (em C, Haskell e Lua), testes (em Céu), bindings e bibliotecas para os ambientes (em C e Céu), drivers (em C e Céu) e aplicações (em Céu).
 
 # Bibliografia
 
