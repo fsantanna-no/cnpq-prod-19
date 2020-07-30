@@ -40,7 +40,7 @@ pandoc all.md -V geometry:margin=0.7in -V fontsize:11pt -s -o calendario.pdf
     - UERJ - Universidade do Estado do Rio de Janeiro
     - Departamento de Informática e Ciências da Computação
 - Instituições Parceiras, se existentes (nome e sigla):
-    - *Nada a declarar.*
+    - *Nada a declarar. O projeto será inteiramente desenvolvido na UERJ.*
 
 # (2) Descrição do Projeto
 
@@ -185,7 +185,7 @@ Assim, considerando que o consumo em standby é desprezível, poderemos
 economizar até 50% de energia.
 
 O Arduino já é adotado em muitos trabalhos no contexto de IoT [4].
-Portanto, a sua do Arduino fará com que a nosso trabalho seja mais acessível e
+Portanto, o uso do Arduino fará com que a nosso trabalho seja mais acessível e
 reproduzível para outros grupos.
 Em educação, muitos cursos em universidades usam o Arduino [4].
 Nós também usamos o Arduino em cursos de graduação e pós-graduação nos últimos
@@ -427,7 +427,8 @@ funcionalidade de um smartphone moderno.
 inclusive os mecanismos de articulação e acompanhamento a serem utilizados para
 execução do projeto.)*
 
-*Nada a declarar.*
+*Nada a declarar. O projeto possui gestão simples. Basicamente o proponente
+orientando alguns de seus alunos de graduação e pós-graduação.*
 
 ## (2.g) Descrever o nível de maturidade tecnológica atual do projeto
 
@@ -492,7 +493,7 @@ muitos anos.
 Também destaco o Workshop REBLS voltado especificamente para linguagens
 reativas e que já está indo para a 6 edição anual dentro do SPLASH.
 Participei nele como autor, revisor, chair, e hoje faço parte do comitê
-permanente (https://2019.splashcon.org/home/rebls-2019).
+permanente (https://2020.splashcon.org/home/rebls-2020).
 
 - 2011
     - SenSys (PhD Colloquium) - The ACM Conference on Embedded Networked Sensor Systems
@@ -568,6 +569,8 @@ Com a proposta deste projeto, os ganhos se estenderão também à economia de
 energia transparente, novamente oferecendo mais garantias de funcionamento sem
 a necessidade de mais código.
 
+## 4. Potencial do projeto para ações de empreendedorismo inovador.
+
 Extra oficialmente, fomos informados sobre um sistema embarcado que foi
 desenvolvido em Céu:
 
@@ -590,10 +593,6 @@ https://www.blech-lang.org/
 
 Novamente, Céu propõe mecanismos inovadores para o nicho de sistemas embarcados
 e IoT na indústria, onde ainda há muito espaço para inovação.
-
-## 4. Potencial do projeto para ações de empreendedorismo inovador.
-
-*Nada a declarar.*
 
 ## 5. Atendimento a necessidades de criação e/ou melhoria de produtos, processos e/ou serviços, demandadas por instituições no ambiente produtivo ou social.
 
